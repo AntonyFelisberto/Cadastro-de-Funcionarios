@@ -31,7 +31,7 @@ export class AppComponent implements OnInit{
 
   public onOpenModal(empregado: Empregado, mode: string): void{
     const button = document.createElement('button');
-    const container = document.createElement('');
+    const container = document.getElementById('main-container');
 
 
     button.type = 'button';
@@ -46,5 +46,7 @@ export class AppComponent implements OnInit{
     if(mode === 'delete'){
       button.setAttribute('data-target','#addEmpregadoModal');
     }
+    container?.appendChild(button);
+    button.click();
   }
 }
