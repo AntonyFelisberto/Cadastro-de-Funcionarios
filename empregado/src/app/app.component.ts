@@ -68,6 +68,24 @@ export class AppComponent implements OnInit{
     );
   }
 
+  public searchEmpregado(chave: string){
+    const resultados:Empregado[] = [];
+
+    for(const listaDeEmpregados of this.empregado){
+      if(listaDeEmpregados.nome.toLowerCase().indexOf(chave.toLowerCase()) !== -1
+      || listaDeEmpregados.email.toLowerCase().indexOf(chave.toLowerCase()) !== -1
+      || listaDeEmpregados.telefone.toLowerCase().indexOf(chave.toLowerCase()) !== -1
+      || listaDeEmpregados.trabalho.toLowerCase().indexOf(chave.toLowerCase()) !== -1){
+        resultados.push(listaDeEmpregados);
+      }
+    }
+    this.empregado = resultados;
+
+    if(resultados.length === 0 || !chave){
+      this.getEmpregados();
+    }
+  }
+
   public addEmpregado(){
     const button = document.createElement('button');
     const container = document.getElementById('main-container');
