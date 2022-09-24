@@ -13,7 +13,7 @@
      </ul>
      <form class="form-inline my-2 my-lg-0">
         <input type="search" ngModel
-         name="key" id="searchName" class="form-control mr-sm-2" placeholder="Procurar funcionarios" required>
+         name="key" id="searchName" #key="ngModel" (ngModelChange)="searchEmpregado(key.value)" class="form-control mr-sm-2" placeholder="Procurar funcionarios" required>
      </form>
   </div>
 </nav>
