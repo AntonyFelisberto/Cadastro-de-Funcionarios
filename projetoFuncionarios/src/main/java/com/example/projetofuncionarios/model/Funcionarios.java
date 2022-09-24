@@ -94,6 +94,7 @@ public class Funcionarios implements Serializable {
                         ", trabalho=" + trabalho + '\'' +
                         ", telefone=" + telefone + '\'' +
                         ", imagemUrl=" + imagemUrl + '\'' +
+                        ", codigoEmpregado=" + codigoEmpregado + '\'' +
                         '}';
 
     }

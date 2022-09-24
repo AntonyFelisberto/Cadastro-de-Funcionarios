@@ -105,26 +105,26 @@
            <div class="modal-body">
               <form #editForm="ngForm">
                  <div class="form-group">
-                    <label for="name">Nome</label>
-                    <input type="text" ngModel="{{editarEmpregado?.nome}}" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
+                    <label for="nome">Nome</label>
+                    <input type="text" ngModel="{{editarEmpregado?.nome}}" name="nome" class="form-control" id="nome" aria-describedby="emailHelp" placeholder="nome">
                  </div>
-                 <input type="hidden" name="id" class="form-control" id="id" placeholder="Email">
-                 <input type="hidden"  name="userCode" class="form-control" id="userCode" placeholder="Email">
+                 <input type="hidden" ngModel="{{editarEmpregado?.id}}" name="id" class="form-control" id="id" placeholder="id">
+                 <input type="hidden" ngModel="{{editarEmpregado?.codigoDoEmpregado}}" name="userCode" class="form-control" id="userCode" placeholder="codigoDoEmpregado">
                  <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" ngModel="{{editarEmpregado?.email}}" name="email" class="form-control" id="email" placeholder="Email">
                  </div>
                  <div class="form-group">
-                    <label for="phone">Trabalho</label>
-                    <input type="text"  ngModel="{{editarEmpregado?.trabalho}}" name="jobTitle" class="form-control" id="jobTitle" placeholder="Job title">
+                    <label for="trabalho">Trabalho</label>
+                    <input type="text"  ngModel="{{editarEmpregado?.trabalho}}" name="trabalho" class="form-control" id="trabalho" placeholder="trabalho">
                  </div>
                  <div class="form-group">
-                    <label for="phone">Tel</label>
-                    <input type="text" ngModel="{{editarEmpregado?.telefone}}" name="phone" class="form-control" id="phone" name="phone" placeholder="Phone">
+                    <label for="telefone">Tel</label>
+                    <input type="text" ngModel="{{editarEmpregado?.telefone}}" name="telefone" class="form-control" id="telefone" name="telefone" placeholder="telefone">
                  </div>
                  <div class="form-group">
-                    <label for="phone">Imagem URL</label>
-                    <input type="text" ngModel="{{editarEmpregado?.imagemUrl}}" name="imageUrl" class="form-control" id="imageUrl" placeholder="Image URL">
+                    <label for="imagemUrl">Imagem URL</label>
+                    <input type="text" ngModel="{{editarEmpregado?.imagemUrl}}" name="imagemUrl" class="form-control" id="imagemUrl" placeholder="imagemUrl">
                  </div>
                  <div class="modal-footer">
                     <button type="button" id="update-employee-form" data-dismiss="modal" class="btn btn-secondary">Close</button>
