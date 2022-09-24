@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   
   public empregado!: Empregado[];
   public editarEmpregado!: Empregado;
+  public deletarEmpregado!:Empregado;
 
   constructor(private empregadoService:EmpregadoService){}
  
@@ -32,15 +33,15 @@ export class AppComponent implements OnInit{
   }
 
 
-  public delEmpregados(): void {
-    this.empregadoService.getEmpregados().subscribe(
-      (response: Empregado[]) => {
-          this.empregado = response;
-      },
-      (error:HttpErrorResponse) => {
-        alert(error.message);
+  public onDeleteEmpregados(idEmpregado: number){
+    this.empregadoService.deleteEmpregados(idEmpregado).subscribe(
+      (response:void) => {
+        console.log(response)
+        this.getEmpregados();
+      },(error: HttpErrorResponse) => {
+        alert(error.message)
       }
-    )
+    );
   }
 
   public onAddEmpregados(addForm: NgForm){
@@ -49,6 +50,7 @@ export class AppComponent implements OnInit{
       (response:Empregado) => {
         console.log(response);
         this.getEmpregados();
+        addForm.reset();
       },(error: HttpErrorResponse) => {
         alert(error.message)
       }
@@ -94,7 +96,7 @@ export class AppComponent implements OnInit{
       button.setAttribute('data-target','#updateEmpregadoModal');
     }
     if(mode === 'delete'){
-      this.editarEmpregado = empregado;
+      this.deletarEmpregado = empregado;
       button.setAttribute('data-target','#deleteEmployeeModal');
     }
     container?.appendChild(button);

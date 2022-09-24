@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface FuncionariosRepo extends JpaRepository<Funcionarios,Long> {
-    void deleteFuncionariosById(Long id);
+    void deleteById(Long id);
 
-    Optional<Funcionarios> findFuncionariosById(Long id);
+    Optional<Funcionarios> findById(Long id);
 }

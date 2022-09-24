@@ -32,10 +32,10 @@ public class FuncionariosServicos {
     }
 
     public Funcionarios encontrarTodosFuncionariosPorId(Long id) {
-        return funcionariosRepo.findFuncionariosById(id).orElseThrow(() -> new UserNotFoundException("User by id "+id+" was not found"));
+        return funcionariosRepo.findById(id).orElseThrow(() -> new UserNotFoundException("User by id "+id+" was not found"));
     }
 
     public void deleteFuncionarios(Long id) {
-        funcionariosRepo.deleteFuncionariosById(id);
+        funcionariosRepo.deleteById(id);
     }
 }

@@ -147,10 +147,10 @@
               </button>
            </div>
            <div class="modal-body">
-              <p>Deseja deletar Esse Empregado ?</p>
+              <p>Deseja deletar Esse Empregado {{deletarEmpregado?.nome}}?</p>
               <div class="modal-footer">
                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-                 <button (click)="delEmpregados()" class="btn btn-danger" data-dismiss="modal">Sim</button>
+                 <button (click)="onDeleteEmpregados(deletarEmpregado.id)" class="btn btn-danger" data-dismiss="modal">Sim</button>
               </div>
            </div>
         </div>
