@@ -29,6 +29,20 @@ export class AppComponent implements OnInit{
     )
   }
 
+  public addEmpregado(){
+    const button = document.createElement('button');
+    const container = document.getElementById('main-container');
+
+    button.type = 'button';
+    button.style.display = 'none';
+    
+    button.setAttribute('data-toggle','modal');
+    button.setAttribute('data-target','#addEmpregadoModal');
+    
+    container?.appendChild(button);
+    button.click();
+  }
+
   public onOpenModal(empregado: Empregado, mode: string): void{
     const button = document.createElement('button');
     const container = document.getElementById('main-container');
@@ -37,9 +51,7 @@ export class AppComponent implements OnInit{
     button.type = 'button';
     button.style.display = 'none';
     button.setAttribute('data-toggle','modal');
-    if(mode === 'add'){
-      button.setAttribute('data-target','#addEmpregadoModal');
-    }
+
     if(mode === 'edit'){
       button.setAttribute('data-target','#updateEmpregadoModal');
     }
